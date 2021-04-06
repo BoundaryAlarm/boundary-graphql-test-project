@@ -1,8 +1,8 @@
-import {IUser} from "../../types";
-import {Field, ObjectType} from "type-graphql";
+import {Field, InputType} from "type-graphql";
 
-@ObjectType()
-export class User implements IUser {
+@InputType()
+export class NewUserInput {
+
     @Field()
     public email_address: string;
 
@@ -10,11 +10,6 @@ export class User implements IUser {
     public first_name: string;
 
     @Field()
-    public id: number;
-
-    @Field()
-    public is_active: boolean;
-
     public password: string;
 
     @Field()
